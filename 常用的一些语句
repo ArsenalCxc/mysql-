@@ -1,0 +1,15 @@
+mysql将查询到的数据导出
+方法一：
+mysql> select count(1) from table  into outfile '/tmp/test.xls';
+方法二：
+[root@SHNHDX63-146 ~]# mysql -h 127.0.0.1 -u root -p XXXX -P 3306 -e "select * from table"  > /tmp/test/txt
+
+mysql数据库表结构导入导出
+导出表结构、表结构+表数据
+mysqldump -u用户名 -p 密码 -d数据库名  表名> 导出的文件名 
+[root@SHNHDX63-146 ~]#mysqldump -uroot -pmysql -d sva_rec > e:\sva_rec.sql 
+mysqldump -u用户名 -p 密码  数据库名 表名> 导出的文件名 
+[root@SHNHDX63-146 ~]#mysqldump -uroot -pmysql sva_rec date_rec_drv> e:\date_rec_drv.sql 
+导入数据库
+mysql>source d:wcnc_db.sql
+
